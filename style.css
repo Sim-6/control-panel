@@ -1,0 +1,13 @@
+body {
+    background-color: #14213d;
+    color: rgb(0, 0, 0);
+}
+.box {
+    border-radius: 2%;
+    border-style: solid;
+    border-color:#fca311;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
