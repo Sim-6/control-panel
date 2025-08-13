@@ -19,8 +19,28 @@ function logRandomText() {
     consoleElement.appendChild(newLog); // Log-Element zur Konsole hinzufügen
 }
 
-// Alle Buttons auswählen und Event-Listener hinzufügen
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => {
-    button.addEventListener('click', logRandomText);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Nur Buttons mit der ID "color-button" auswählen
+    const colorButtons = document.querySelectorAll('button[id="color-button"]');
+    
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    
+    colorButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            logRandomText();
+            this.style.backgroundColor = getRandomColor();
+        });
+        // Dauerhafte Farb-Animation nur für Buttons mit color-button ID
+        setInterval(() => {
+            button.style.backgroundColor = getRandomColor();
+        }, 700 + Math.random() * 1300);
+    });
 });
