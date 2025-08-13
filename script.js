@@ -17,6 +17,9 @@ function logRandomText() {
     const randomText = randomTexts[Math.floor(Math.random() * randomTexts.length)]; // Zufälligen Text auswählen
     newLog.textContent = randomText; // Text für das Log
     consoleElement.appendChild(newLog); // Log-Element zur Konsole hinzufügen
+    
+    // Automatisch nach unten scrollen
+    consoleElement.scrollTop = consoleElement.scrollHeight;
 }
 
 
