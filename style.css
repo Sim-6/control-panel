@@ -23,7 +23,6 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    /* Animation entfernt, JS übernimmt die Farbwechsel */
     margin-top: 5px;
 }
 .fixed-size {
@@ -58,9 +57,16 @@ button {
     box-sizing: border-box;
 }
 
-
 .color-div {
     padding: 1rem 0 1rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-content: flex-start;
+}
+
+.switch-grid {
+    padding: 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
@@ -70,10 +76,56 @@ button {
 .color-div button {
     margin: 0;
     flex: none;
+    display: block;
 }
-     
 
+.color-div .switchbtn {
+    margin: 0 !important;
+    margin-top: 0 !important;
+    display: block !important;
+}
 
+.switch-grid .switchbtn {
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: block !important;
+    flex: 1 1 calc(33.333% - 4px) !important;
+    max-width: calc(33.333% - 4px) !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
 
- 
+/* Sehr spezifische Regel für Switch-Buttons im Flexbox-Layout */
+div.card.switch-grid button.switchbtn {
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: block !important;
+    flex: 1 1 calc(33.333% - 4px) !important;
+    max-width: calc(33.333% - 4px) !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
 
+.switchbtn {
+    padding: 40px 40px;
+    background-color: black;
+    border: solid;
+    border-color: #849FDC;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+button.switchbtn.active,
+button#switchbtn.active {
+    background-color: #ff0000 !important;
+    border-color: white !important;
+    color: black !important;
+}

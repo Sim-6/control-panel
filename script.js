@@ -46,4 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
             button.style.backgroundColor = getRandomColor();
         }, 700 + Math.random() * 1300);
     });
+
+    // Switch-Button Funktionalität
+    const switchButtons = document.querySelectorAll('button.switchbtn');
+    
+    console.log('Switch buttons found:', switchButtons.length);
+    
+    for(let i = 0; i < switchButtons.length; i++) {
+      switchButtons[i].addEventListener('click', () => {
+        switchButtons[i].classList.toggle('active');
+      })
+    }
 });
