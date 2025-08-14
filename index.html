@@ -100,14 +100,95 @@
         </div>
         <p>Rendering</p>
     </div>
-    <div class="card">FIVE</div>
-    <div class="card">SIX</div>
-    <div class="card">SEVEN</div>
-    <div class="card">EIGHT</div>
-    <div class="card">NINE</div>
-    <div class="card">TEN</div>
-    <div class="card">ELEVEN</div>
-    <div class="card">TWELVE</div>
+    <div class="card">
+        <div class="card planet-console">
+            <div class="console-screen">
+                <canvas id="planetCanvas" width="400" height="300"></canvas>
+                <div class="console-grid"></div>
+                <div class="console-info">
+                    <div class="info-line">OBJECT: PLANET-X47</div>
+                    <div class="info-line">DISTANCE: 4.2 AU</div>
+                    <div class="info-line">STATUS: SCANNING...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card radar-console">
+            <canvas id="radarCanvas" width="400" height="300"></canvas>
+            <div class="radar-info">
+                <div class="info-line">RADAR SWEEP</div>
+                <div class="info-line">RANGE: 50 KM</div>
+                <div class="info-line">CONTACTS: 3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card matrix-console">
+        <div class="matrix-header">SYSTEM STATUS</div>
+        <canvas id="matrixCanvas" width="400" height="300"></canvas>
+        <div class="matrix-info">
+            <div class="info-line">NODES: 64</div>
+            <div class="info-line">ACTIVE: 12</div>
+            <div class="info-line">STATUS: ONLINE</div>
+        </div>
+    </div>
+
+    <div class="card server-console">
+        <div class="server-header">SERVER DETAILS</div>
+        <div class="server-display">
+            <div id="serverInfo" class="server-info">
+                <div class="server-line">Click on Matrix Node to view server</div>
+            </div>
+        </div>
+        <div class="server-stats">
+            <div class="info-line">SELECTED: NONE</div>
+            <div class="info-line">CPU: ---%</div>
+            <div class="info-line">MEMORY: ---MB</div>
+        </div>
+    </div>
+    
+    <div class="card waveform-console">
+        <div class="wave-header">SIGNAL ANALYSIS</div>
+        <canvas id="waveCanvas" width="400" height="300"></canvas>
+        <div class="wave-info">
+            <div class="info-line">FREQ: 2.4 GHz</div>
+            <div class="info-line">AMP: 85%</div>
+            <div class="info-line">STATUS: LOCKED</div>
+        </div>
+    </div>
+    
+    <div class="card hud-console">
+        <div class="hud-header">TARGETING SYSTEM</div>
+        <canvas id="hudCanvas" width="400" height="300"></canvas>
+        <div class="hud-info">
+            <div class="info-line">X: 127.4</div>
+            <div class="info-line">Y: 89.7</div>
+            <div class="info-line">STATUS: LOCKED</div>
+        </div>
+    </div>
+    
+        <div class="card data-console">
+        <div class="data-header">DATA STREAM</div>
+        <div id="dataStream" class="data-stream">
+            <!-- Dynamic messages will be added here -->
+        </div>
+        <div class="stream-info">
+            <div class="info-line">RATE: 1.2 MB/s</div>
+            <div class="info-line">PACKETS: 45,231</div>
+            <div class="info-line">STATUS: STREAMING</div>
+        </div>
+    </div>
+    
+    <div class="card hologram-console">
+        <div class="hologram-header">HOLOGRAM PROJECTOR</div>
+        <canvas id="hologramCanvas" width="400" height="300"></canvas>
+        <div class="hologram-info">
+            <div class="info-line">PROJECTION: 3D</div>
+            <div class="info-line">RESOLUTION: HIGH</div>
+            <div class="info-line">STATUS: ACTIVE</div>
+        </div>
+    </div>
     <div class="card">TWELVE</div>
     <div class="card">TWELVE</div>
     <div class="card">TWELVE</div>
@@ -137,17 +218,7 @@
 
 </div>   
 
-<button>sadjak</button>
-<button>sadjak</button>
-<button>sadjak</button>
-<button>sadjak</button>
-<button>sadjak</button>
 
-<input type="range" min="-5" max="5" step="1.0" value="0">
-<input type="range" min="-5" max="5" step="1.0" value="0">
-<input type="range" min="-5" max="5" step="1.0" value="0">
-
-<input type="radio">
 
 
 
