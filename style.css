@@ -26,7 +26,9 @@ button {
     margin-top: 5px;
 }
 .fixed-size {
-    height: var(--fixed-card-height);
+    height: var(--fixed-card-height) !important;
+    min-height: var(--fixed-card-height) !important;
+    max-height: var(--fixed-card-height) !important;
 }
 .card {
     border-radius: 10px;
@@ -42,13 +44,15 @@ button {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: min-content;
+    align-items: start;
 }
 .console {
     background-color: black;
     color: white;
     width: 100%;
     height: 100%;
-    max-height: calc(var(--fixed-card-height) - 2rem);
+    max-height: var(--fixed-card-height);
     border-radius: 10px;
     border-style: solid;
     border-color:#849FDC;
@@ -90,7 +94,10 @@ button {
     margin-top: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
     flex: 1 1 calc(33.333% - 4px) !important;
     max-width: calc(33.333% - 4px) !important;
     min-width: 0 !important;
@@ -103,7 +110,10 @@ div.card.switch-grid button.switchbtn {
     margin-top: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
     flex: 1 1 calc(33.333% - 4px) !important;
     max-width: calc(33.333% - 4px) !important;
     min-width: 0 !important;
@@ -111,11 +121,11 @@ div.card.switch-grid button.switchbtn {
 }
 
 .switchbtn {
-    padding: 40px 40px;
+    padding: 35px 35px;
     background-color: black;
     border: solid;
     border-color: #849FDC;
-    color: white;
+    color: black;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -127,5 +137,65 @@ button.switchbtn.active,
 button#switchbtn.active {
     background-color: #ff0000 !important;
     border-color: white !important;
-    color: black !important;
+    color: white !important;
+}
+
+
+
+.progress-bar-container {
+  width: 100%;
+  max-width: 367px;
+  height: 30px;
+  background-color: #000000;
+  border-radius: 2px;
+  border: 1px solid #ff00ff;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #ffffff, #ff0000);
+  
+  background-image: linear-gradient(
+    45deg,
+    rgb(255, 255, 255) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgb(255, 255, 255) 50%,
+    rgb(255, 255, 255) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  transition: width 5s ease;
+  
+  animation: indeterminate 5s infinite linear;
+}
+
+
+@keyframes indeterminate {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animation-5 {
+    transition: width 5s ease;
+    animation: indeterminate 5s infinite linear;
+}
+.animation-3 {
+    transition: width 3s ease;
+    animation: indeterminate 3s infinite linear;
+}
+.animation-1 {
+    transition: width 1.5s ease;
+    animation: indeterminate 1.5s infinite linear;
+}
+.animation-4 {
+    transition: width 4s ease;
+    animation: indeterminate 4s infinite linear;
+}
+.animation-2 {
+    transition: width 2s ease;
+    animation: indeterminate 2s infinite linear;
 }
